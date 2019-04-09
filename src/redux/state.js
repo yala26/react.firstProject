@@ -1,4 +1,4 @@
-import {rerenderTree} from '../render';
+
 let state = {
   posts:[
     {id:0 , message: 'hello'},
@@ -14,7 +14,7 @@ export let del = (id) => {
         break;
     }
   }
-    rerenderTree(state);
+
 }
 
 export let addPost = (message) => {
@@ -24,7 +24,7 @@ export let addPost = (message) => {
     message:message
   };
   state.posts.push(newPost);
-  rerenderTree(state);
+
 }
 
 export default state;

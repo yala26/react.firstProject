@@ -2,19 +2,19 @@ import React from 'react';
 import Add from './Add';
 import DelPost from './Del';
 
-let Posts = ({message ,addPost ,delPost}) => {
-    let newArr = message.map(elem => {
+let Posts = ({text , index , delNotes}) => {
+
         return(
-            <div>{elem.message}<DelPost id={elem.id} delPost={delPost}/></div>
+                <li className="list-group-item">
+                    <p className="list-group-item-text">{text}
+                        <span
+                            onClick={() => {
+                                delNotes(index)
+                            }}
+                            className="glyphicon glyphicon-remove pull-right">
+                        </span>
+                    </p>
+                </li>
         )
-    })
-
-    return(
-        <div>
-            <div>{newArr}</div>
-            <Add addPost={addPost}/>
-
-        </div>
-    )
 }
 export default Posts;
